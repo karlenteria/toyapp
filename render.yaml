@@ -8,7 +8,6 @@ services:
   - type: web
     name: rails
     plan: free
-    env: ruby
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails s" #puma -C config/puma.rb
