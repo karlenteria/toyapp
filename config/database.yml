@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: toyapp_production
   username: toyapp
   password: <%= ENV["TOYAPP_DATABASE_PASSWORD"] %>
