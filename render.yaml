@@ -3,13 +3,13 @@ databases:
     databaseName: mysite
     user: mysite
     ipAllowList: []
-     plan: free
+    plan: free
 services:
   - type: web
     name: rails
-    runtime: ruby
+    env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: "bundle exec rails s"
     envVars:
       - key: RAILS_MASTER_KEY
         sync: false
@@ -17,7 +17,6 @@ services:
         fromDatabase:
           name: postgres
           property: connectionString
-    plan: free
 - type: redis
   name: redis
   ipAllowList: []
